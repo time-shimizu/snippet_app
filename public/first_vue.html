@@ -10,17 +10,29 @@
     <div id = "app">
       <p>{{message}}</p>
       <p>{{message2}}</p>
+      <button v-on:click="changeMsg">Change</button>
     </div>
     <script>
-    new Vue({
-      el: "#app",
-      data(){
-        return{
-          message: "Hello Vue!",
-          message2: 'Hoge'
-        };
-      }
-    })
+      new Vue({
+        el: "#app",
+        data(){
+          return{
+            message: "Hello Vue!",
+            message2: 'Hoge'
+          }
+        },
+        mounted(){
+          this.setMsg();
+        },
+        methods: {
+          setMsg: function(){
+            this.message = "Set Message";
+          },
+          changeMsg: function(){
+            this.message = 'Changed Message'
+          },
+        }
+      })
     </script>
   </body>
 </html>
