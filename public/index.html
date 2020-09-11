@@ -28,7 +28,7 @@
             </div>
           </v-flex>
           <v-flex xs7>
-            <v-card style="margin-top: 10px">
+            <v-card style="margin-top:10px" v-for="snippet in snippetList">
               <v-card-title primary-title>
                 <h3 class="headline">Snippet Title</h3>
               </v-card-title>
@@ -51,7 +51,7 @@
         el: '#app',
         data () {
           return {
-
+            snippetList: ['',''],
           }
         },
         mounted () {
